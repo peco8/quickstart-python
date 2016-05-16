@@ -1,22 +1,22 @@
-# Set the base image to Ubuntu
+# Using official Python runtime base image
 FROM python:2.7-slim
 
-# File Author / Maintainer
-MAINTAINER Maintaner Name
+MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
 
-# Copy the application folder inside the container
-ADD /my_application /my_application
+# Set the applilcation directory
+ENV APP_HOME /flask
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
 
 # Get pip to download and install requirements:
-RUN pip install -r /my_application/requirements.txt
+COPY ./flask/requirements.txt $APP_HOME/
+RUN pip install -r requirements.txt
 
-# Expose ports
+# Copy our code from the current folder to /app inside the container
+COPY . $APP_HOME
+
+# Make port 5000 available for publish
 EXPOSE 80
 
-# Set the default directory where CMD will execute
-WORKDIR /my_application
-
-# Set the default command to execute
-# when creating a new container
-# i.e. using CherryPy to serve the application
-CMD python server.py
+# Start server
+CMD ["python", "flask/server.py"]
