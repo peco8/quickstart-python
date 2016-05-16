@@ -1,5 +1,5 @@
 # quickstart-python
-A simple Python app (using Flask: a microframework for Python based on Werkzeug, Jinja 2. http://flask.pocoo.org/ ) which can easily be deployed to Arukas.
+A simple Python app ( using Flask: a microframework for Python based on Werkzeug, Jinja 2. http://flask.pocoo.org/ ) which can easily be deployed to Arukas.
 
 ## Running locally
 
