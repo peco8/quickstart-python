@@ -4,7 +4,7 @@ A simple Python app ( using [Flask](http://flask.pocoo.org/): a microframework f
 ## Running locally
 
 ```
-$ git clone https://github.com/peco8/quickstart-python.git
+$ git clone git@github.com:peco8/quickstart-python.git
 $ cd quickstart-python
 $ docker build --no-cache --tag quickstart-python .
 $ docker run -d -p 80:80 quickstart-python
