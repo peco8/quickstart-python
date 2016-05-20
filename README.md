@@ -7,7 +7,7 @@ A simple Python app ( using Flask: a microframework for Python based on Werkzeug
 $ git clone https://github.com/peco8/quickstart-python.git
 $ cd quickstart-python
 $ docker build --no-cache --tag quickstart-python .
-$ docker run -rm -d -p 80:80 quickstart-python
+$ docker run -d -p 80:80 quickstart-python
 ```
 
 Your app should now be running:
