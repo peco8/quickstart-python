@@ -4,12 +4,12 @@ FROM python:2.7-slim
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
 
 # Set the applilcation directory
-ENV APP_HOME /flask
+ENV APP_HOME /app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 # Get pip to download and install requirements:
-COPY ./flask/requirements.txt $APP_HOME/
+COPY requirements.txt $APP_HOME/
 RUN pip install -r requirements.txt
 
 # Copy our code from the current folder to /app inside the container
@@ -19,4 +19,4 @@ COPY . $APP_HOME
 EXPOSE 80
 
 # Start server
-CMD ["python", "flask/server.py"]
+CMD python $APP_HOME/server.py
